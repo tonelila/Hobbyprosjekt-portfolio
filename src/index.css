@@ -1,0 +1,43 @@
+:root {
+/* Farger */
+  --color-bg: #f8cad7;
+  --color-text: #812c02;
+  --color-muted: #fafafa;
+  --color-accent: #63b06d;
+
+/* Typografi */
+--font-body: "Inter", system-ui, sans-serif;
+--font-heading: "Cormorant Garamond", Georgia, serif;
+
+/* Avstander */
+--space-s: 0.5rem;
+--space-m: 1rem;
+--space-1: 2rem;
+--space-xl: 4rem:
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%
+  display: block;
+}
+
+[data-theme="arcade"] {
+  --color-bg: #0b0221;
+  --color-accent: #ff2bd6;
+  --font-body: "Karla", system-ui, sans-serif;
+}

@@ -1,0 +1,26 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-l);
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+.greeting {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+}
+
+.tagline {
+    color: var(--color-muted);
+    font-size: 1.25rem;
+    margin-top: var(--space-m);
+}

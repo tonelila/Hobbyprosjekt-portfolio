@@ -1,10 +1,12 @@
+import Hero from './components/Hero/Hero'
+   
    function App() {
      return (
        <main>
-         <h1>Hei, jeg er Lill Tony</h1>
-         <p>Mer info Kommer snart ✨</p>
+         <Hero/>
        </main>
      )
    }
 
    export default App
+
