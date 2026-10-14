@@ -1,43 +1,43 @@
 :root {
 /* Farger */
-  --color-bg: #f8cad7;
-  --color-text: #812c02;
-  --color-muted: #fafafa;
-  --color-accent: #63b06d;
+  --color-bg: #f8c9ad;
+  --color-bg-light: #fbe3d4;
+  --color-cream: #fff7f1;
+  --color-text: #5a2a22;
+  --color-accent: #a85d4a;
+  --color-accent-dark: #8a4636;
+  --color-rose: #d9927e;
+  --color-sage: #7d876e;
 
-/* Typografi */
---font-body: "Inter", system-ui, sans-serif;
---font-heading: "Cormorant Garamond", Georgia, serif;
+ /* Fonter */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Karla", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-/* Avstander */
---space-s: 0.5rem;
---space-m: 1rem;
---space-1: 2rem;
---space-xl: 4rem:
+  /* Skygger: flere myke lag ser mer ekte ut enn én hard */
+  --shadow-sm: 0 1px 2px rgb(90 42 34 / .08), 0 2px 6px rgb(90 42 34 / .08);
+  --shadow-lg: 0 2px 4px rgb(90 42 34 / .06), 0 12px 24px rgb(90 42 34 / .12), 0 32px 64px rgb(90 42 34 / .14);
 
+  /* Avstander */
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 4rem;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
+  /* prikkmønster oppå ferskenfargen */
+  background:
+    radial-gradient(rgb(90 42 34 / .12) 1px, transparent 1.2px) 0 0 / 18px 18px,
+    var(--color-bg);
 }
 
-img {
-  max-width: 100%
-  display: block;
-}
-
-[data-theme="arcade"] {
-  --color-bg: #0b0221;
-  --color-accent: #ff2bd6;
-  --font-body: "Karla", system-ui, sans-serif;
-}
+img { max-width: 100%; display: block; }

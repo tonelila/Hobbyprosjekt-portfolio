@@ -1,26 +1,112 @@
 .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--space-xl) var(--space-l);
-    max-width: 900px;
-    margin: 0 auto; 
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-l);
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;   /* tekst litt bredere enn bildet */
+  gap: var(--space-xl);
+  align-items: center;
 }
 
-.greeting {
-    color: var(--color-accent);
-    font-weight: 600;
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--color-cream);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-m);
 }
 
-.name {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 1.1;
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4f9d69;
+  box-shadow: 0 0 0 4px rgb(79 157 105 / .2);  /* lys «ring» rundt prikken */
 }
 
-.tagline {
-    color: var(--color-muted);
-    font-size: 1.25rem;
-    margin-top: var(--space-m);
+.title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1.02;
+}
+
+.title em {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-l);
+}
+
+.chips li {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--color-cream);
+  border: 1px solid rgb(90 42 34 / .12);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Bildet ---- */
+.photoWrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+}
+
+/* den stiplede buen bak bildet */
+.photoWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(12px, 12px);
+  border: 1.5px dashed var(--color-accent);
+  border-radius: 999px 999px 16px 16px;
+  opacity: .5;
+}
+
+.arch {
+  position: relative;
+  height: 100%;
+  border-radius: 999px 999px 16px 16px;   /* rund topp, nesten flat bunn */
+  overflow: hidden;                       /* klipper bildet etter buen */
+  background: linear-gradient(180deg, #fffaf6, var(--color-bg-light));
+  box-shadow: var(--shadow-lg);
+}
+
+.arch img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+}
+
+/* ---- Mobil ---- */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;   /* én kolonne */
+    gap: var(--space-l);
+    padding-top: var(--space-l);
+  }
+  .photoWrap {
+    order: -1;          /* bildet øverst på mobil */
+    max-width: 240px;
+  }
 }
