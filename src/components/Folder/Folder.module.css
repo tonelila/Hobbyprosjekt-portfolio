@@ -1,0 +1,74 @@
+.folder {
+  position: relative;
+  aspect-ratio: 1 / .85;
+  perspective: 600px;   /* gjør 3D-effekten synlig */
+  cursor: pointer;
+}
+
+.back {
+  position: absolute;
+  inset: 10% 0 0 0;
+  background: var(--color-rose);
+  border-radius: 4px 12px 12px 12px;
+}
+
+/* fanen på mappa */
+.back::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 0;
+  width: 45%;
+  height: 16%;
+  background: var(--color-rose);
+  border-radius: 8px 8px 0 0;
+}
+
+.paper {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 6%;
+  height: 60%;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--color-cream);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: top .3s ease;
+}
+
+.paperBack {
+  top: 10%;
+  transform: rotate(-5deg);
+  background: #fde9dc;
+}
+
+.front {
+  position: absolute;
+  inset: 26% 0 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fbd8c3, var(--color-bg));
+  transform-origin: bottom;
+  transform: rotateX(-14deg);    /* vippet litt bakover */
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .6), 0 10px 20px rgb(40 10 5 / .35);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--color-text);
+  transition: transform .3s ease;
+}
+
+.label { font-weight: 600; font-size: 1.1rem; }
+.meta  { font-family: var(--font-mono); font-size: .75rem; opacity: .7; }
+
+/* hover: mappa åpner seg og papirene løftes opp */
+.folder:hover .front      { transform: rotateX(-28deg); }
+.folder:hover .paper      { top: -10%; }
+.folder:hover .paperBack  { top: 0; }

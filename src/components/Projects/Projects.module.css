@@ -1,0 +1,31 @@
+.projects {
+  color: var(--color-cream);
+  padding: var(--space-xl) var(--space-l);
+  background:
+    linear-gradient(rgb(255 255 255 / .045) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, rgb(255 255 255 / .045) 1px, transparent 1px) 0 0 / 32px 100%,
+    linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--space-l);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-l);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .grid { gap: var(--space-m); }
+}

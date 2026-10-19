@@ -1,0 +1,6 @@
+.lace {
+  height: 52px;
+  background:
+    url('../../assets/lace_1.svg') repeat-x,
+    var(--color-accent);
+}
