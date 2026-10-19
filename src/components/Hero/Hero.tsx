@@ -1,5 +1,5 @@
 import styles from './Hero.module.css'
-import profilbilde from '../../assets/bilde portfolio.png'
+import profilbilde from '../../assets/portrett-utsnitt.png'
 
 const skills = ['TypeScript', 'React', 'UX-design', 'Figma']
 
